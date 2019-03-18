@@ -1,0 +1,22 @@
+{
+    "name": "dfornix-test-javascript",
+    "version": "1.0.0",
+    "description": "Data fornix Document Capture demo",
+    "main": "index.html",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "start": "http-server -p 3003",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://git.heroku.com/dfornix-test.git"
+    },
+    "author": "sanjay.verma@ranosys.com",
+    "license": "ISC",
+    "devDependencies": {
+        "http-server": "^0.11.1"
+    }
+}
