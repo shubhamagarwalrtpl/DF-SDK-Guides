@@ -1,12 +1,3 @@
-/* var currentTab = 0;
-var userData = {};
-var selectedDocumentType = '';
-var user_id = '';
-var apiServer;
-var documentCapture;
-var capturedDocument = {};
-var capturedDocumentRes = {}; */
-
 const options = {
     currentTab: 0,
     userData: {},
