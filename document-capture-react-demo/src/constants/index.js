@@ -28,6 +28,6 @@ export const CONSTANT = {
         REQUEST_FOR_ALL_ASSET_ALLOW: 'request-all-allow',
         UPLOAD_ASSET_REQUEST: 'upload'
     },
-    API_TOKEN: 'ranosys:gIC7fNkEGjRJ7oA0dFefEhCU6150lSB4',
-    SDK_TOKEN: 'ranosys:po5KAZjv7zFIU8NFHn9LRTIvEn0ciSq6'
+    API_TOKEN: 'pruvista:SqxYKsMhCHGCFGTrA1qeElGqd2BFekgr',
+    SDK_TOKEN: 'pruvista:FLzt5y1HxGkbJkFMUrhrbBbAsepKjDt7'
 };

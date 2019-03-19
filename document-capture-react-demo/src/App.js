@@ -54,6 +54,9 @@ class App extends Component {
             if (res && res.status) {
                 if (res.data && res.status == CONSTANT.STATUS.SUCCESS) {
                     cookies.set("login", JSON.stringify(res.data));
+                    this.setState({
+                        login: res.data
+                    });
                     this.redirectOnHttps();
                 } else {
                     alert(res.data || 'Error in login api call.');
@@ -67,6 +70,9 @@ class App extends Component {
     logoutHandler() {
         const { cookies } = this.props;
         cookies.set("login", '');
+        this.setState({
+            login: ''
+        });
         this.redirectOnHttp();
     }
 
