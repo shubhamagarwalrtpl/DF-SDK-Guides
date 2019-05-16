@@ -58,7 +58,6 @@ Method | Description
 [**createUser**](docs/CreateUser.md) | This method is for get user details from database before other api call.
 [**documentDataCapture**](docs/DocumentCapture.md) | This method is for capture data from provided documents.
 [**documentDataSave**](docs/DocumentSave.md) | This method is for save captured document into database.
-
 [**checkVideo**](docs/checkVideo.md) | Responsiable for store and verify user video.
 [**SelfieVerify**](docs/SelfieVerify.md) | Responsiable for store and verify user selfie image.
 [**getAssets**](docs/getAssets.md) | This method is responsiable for send all assets list.
