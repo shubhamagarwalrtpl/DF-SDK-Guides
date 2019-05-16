@@ -18,23 +18,6 @@ Include it as a regular script tag on your page:
 <script src='dist/data-fornix-api.js'></script>
 ```
 
-#### 2.2 NPM style import
-
-You can also import it as a module into your own JS build system (tested with Webpack).
-
-
-```sh
-$ npm install --save data-fornix-api
-```
-
-```js
-// ES6 module import
-import DataFornixApi from 'data-fornix-api'
-
-// commonjs style require
-var DataFornixApi = require('data-fornix-api')
-```
-
 ### 3. initializing the SDK
 
 You are now ready to initialize the SDK:
@@ -76,9 +59,28 @@ Method | Description
 [**documentDataCapture**](docs/DocumentCapture.md) | This method is for capture data from provided documents.
 [**documentDataSave**](docs/DocumentSave.md) | This method is for save captured document into database.
 
+[**checkVideo**](docs/checkVideo.md) | Responsiable for store and verify user video.
+[**SelfieVerify**](docs/SelfieVerify.md) | Responsiable for store and verify user selfie image.
+[**getAssets**](docs/getAssets.md) | This method is responsiable for send all assets list.
+[**deleteAsset**](docs/deleteAsset.md) | This method is responsiable for delete asset.
+[**getSharedAssets**](docs/getSharedAssets.md) | This method is responsiable for send all user shared assets list.
+[**organisationAssetRequest**](docs/organisationAssetRequest.md) | Responsiable for send list of organisation request for assets.
+[**organisationAllAssetRequest**](docs/organisationAllAssetRequest.md) | Responsiable for send list of organisation request for all assets.
+[**updateAssetDetails**](docs/updateAssetDetails.md) | Responsiable for update asset data and store.
+[**uploadAssetRequest**](docs/uploadAssetRequest.md) | Responsiable for send list of upload asset request.
+
 
 ## Documentation for Method
 
  - [createUser](docs/CreateUser.md)
  - [documentDataCapture](docs/DocumentCapture.md)
  - [documentDataSave](docs/DocumentSave.md)
+ - [**checkVideo**](docs/checkVideo.md)
+ - [**SelfieVerify**](docs/SelfieVerify.md)
+ - [**getAssets**](docs/getAssets.md)
+ - [**deleteAsset**](docs/deleteAsset.md)
+ - [**getSharedAssets**](docs/getSharedAssets.md)
+ - [**organisationAssetRequest**](docs/organisationAssetRequest.md)
+ - [**organisationAllAssetRequest**](docs/organisationAllAssetRequest.md)
+ - [**updateAssetDetails**](docs/updateAssetDetails.md)
+ - [**uploadAssetRequest**](docs/uploadAssetRequest.md)
