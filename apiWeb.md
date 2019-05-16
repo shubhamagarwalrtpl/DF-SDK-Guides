@@ -39,6 +39,31 @@ const dataFornixAPIInstance = new DataFornixApi(
 );
 ```
 
+### 4. Create User
+
+You also need to create user after SDK initialize and before any other sdk method call.
+
+Call `createUser` method
+
+```js
+// dummy user object
+const userData = {
+    "email":"VALID_USER",
+    "name":"USER_NAME",
+    "phone_number":"USER_PHONE",
+    "country_code":"USER_COUNTRY_CODE"
+}
+
+const createUserRes = dataFornixAPIInstance.createUser(userData);
+// Return promise object
+createUserRes.then(function (success) {
+    // call SDK other methods here
+    console.log('Call SDK other methods here')
+}, function (error) {
+    console.log('Error in create use => ', error);
+});
+```
+
 #### Parameters
 
 Following parameters are using to initialize API SDK:
