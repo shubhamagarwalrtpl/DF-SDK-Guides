@@ -32,7 +32,7 @@ In order to start integration, you will need the **SDK token**.
 Include it as a regular script tag on your page:
 
 ```html
-<script src='dist/data-fornix-dc.js'></script>
+<script src='dist/data-fornix-web-dc.js'></script>
 ```
 
 #### 2.2 NPM style import
@@ -41,15 +41,15 @@ You can also import it as a module into your own JS build system (tested with We
 
 
 ```sh
-$ npm install --save data-fornix-dc
+$ npm install --save data-fornix-web-dc
 ```
 
 ```js
 // ES6 module import
-import DataFornixDC from 'data-fornix-dc'
+import DataFornixDC from 'data-fornix-web-dc'
 
 // commonjs style require
-var DataFornixDC = require('data-fornix-dc')
+var DataFornixDC = require('data-fornix-web-dc')
 ```
 
 #### Notice

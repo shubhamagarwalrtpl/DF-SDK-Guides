@@ -15,7 +15,24 @@ In order to start integration, you will need the **API token**.
 Include it as a regular script tag on your page:
 
 ```html
-<script src='dist/data-fornix-api.js'></script>
+<script src='dist/data-fornix-web-api.js'></script>
+```
+
+#### 2.2 NPM style import
+
+You can also import it as a module into your own JS build system (tested with Webpack).
+
+
+```sh
+$ npm install --save data-fornix-web-api
+```
+
+```js
+// ES6 module import
+import DataFornixApi from 'data-fornix-web-api'
+
+// commonjs style require
+var DataFornixApi = require('data-fornix-web-api')
 ```
 
 ### 3. initializing the SDK
@@ -80,31 +97,31 @@ Following parameters are using to initialize API SDK:
 
 Method | Description
 ------------- | ------------- |
-[**createUser**](docs/CreateUser.md) | This method is for get user details from database before other api call.
-[**documentDataCapture**](docs/DocumentCapture.md) | This method is for capture data from provided documents.
-[**documentDataSave**](docs/DocumentSave.md) | This method is for save captured document into database.
-[**checkVideo**](docs/checkVideo.md) | Responsiable for store and verify user video.
-[**SelfieVerify**](docs/SelfieVerify.md) | Responsiable for store and verify user selfie image.
-[**getAssets**](docs/getAssets.md) | This method is responsiable for send all assets list.
-[**deleteAsset**](docs/deleteAsset.md) | This method is responsiable for delete asset.
-[**getSharedAssets**](docs/getSharedAssets.md) | This method is responsiable for send all user shared assets list.
-[**organisationAssetRequest**](docs/organisationAssetRequest.md) | Responsiable for send list of organisation request for assets.
-[**organisationAllAssetRequest**](docs/organisationAllAssetRequest.md) | Responsiable for send list of organisation request for all assets.
-[**updateAssetDetails**](docs/updateAssetDetails.md) | Responsiable for update asset data and store.
-[**uploadAssetRequest**](docs/uploadAssetRequest.md) | Responsiable for send list of upload asset request.
+[**createUser**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/CreateUser.md) | This method is for get user details from database before other api call.
+[**documentDataCapture**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentCapture.md) | This method is for capture data from provided documents.
+[**documentDataSave**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentSave.md) | This method is for save captured document into database.
+[**checkVideo**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/checkVideo.md) | Responsiable for store and verify user video.
+[**SelfieVerify**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/SelfieVerify.md) | Responsiable for store and verify user selfie image.
+[**getAssets**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/getAssets.md) | This method is responsiable for send all assets list.
+[**deleteAsset**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/deleteAsset.md) | This method is responsiable for delete asset.
+[**getSharedAssets**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/getSharedAssets.md) | This method is responsiable for send all user shared assets list.
+[**organisationAssetRequest**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/organisationAssetRequest.md) | Responsiable for send list of organisation request for assets.
+[**organisationAllAssetRequest**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/organisationAllAssetRequest.md) | Responsiable for send list of organisation request for all assets.
+[**updateAssetDetails**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/updateAssetDetails.md) | Responsiable for update asset data and store.
+[**uploadAssetRequest**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/uploadAssetRequest.md) | Responsiable for send list of upload asset request.
 
 
 ## Documentation for Method
 
- - [createUser](docs/CreateUser.md)
- - [documentDataCapture](docs/DocumentCapture.md)
- - [documentDataSave](docs/DocumentSave.md)
- - [checkVideo](docs/checkVideo.md)
- - [SelfieVerify](docs/SelfieVerify.md)
- - [getAssets](docs/getAssets.md)
- - [deleteAsset](docs/deleteAsset.md)
- - [getSharedAssets](docs/getSharedAssets.md)
- - [organisationAssetRequest](docs/organisationAssetRequest.md)
- - [organisationAllAssetRequest](docs/organisationAllAssetRequest.md)
- - [updateAssetDetails](docs/updateAssetDetails.md)
- - [uploadAssetRequest](docs/uploadAssetRequest.md)
+ - [createUser](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/CreateUser.md)
+ - [documentDataCapture](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentCapture.md)
+ - [documentDataSave](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentSave.md)
+ - [checkVideo](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/checkVideo.md)
+ - [SelfieVerify](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/SelfieVerify.md)
+ - [getAssets](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/getAssets.md)
+ - [deleteAsset](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/deleteAsset.md)
+ - [getSharedAssets](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/getSharedAssets.md)
+ - [organisationAssetRequest](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/organisationAssetRequest.md)
+ - [organisationAllAssetRequest](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/organisationAllAssetRequest.md)
+ - [updateAssetDetails](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/updateAssetDetails.md)
+ - [uploadAssetRequest](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/uploadAssetRequest.md)
