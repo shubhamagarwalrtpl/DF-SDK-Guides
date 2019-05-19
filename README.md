@@ -6,3 +6,4 @@
  - [Document Capture Web SDK](documentCaptureWeb.md)
  - [Selfie Check Web SDK](SelfieCheckWeb.md)
  - [Video Liveliness Web SDK](video-liveliness-web.md)
+ - [Vault Web SDK](vault-web.md)
