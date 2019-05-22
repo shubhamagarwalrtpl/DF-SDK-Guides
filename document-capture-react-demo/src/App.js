@@ -54,10 +54,10 @@ class App extends Component {
             if (res && res.status) {
                 if (res.data && res.status == CONSTANT.STATUS.SUCCESS) {
                     cookies.set("login", JSON.stringify(res.data));
-                    this.setState({
-                        login: res.data
-                    });
                     this.redirectOnHttps();
+                    this.setState({
+                        login: JSON.stringify(res.data)
+                    });
                 } else {
                     alert(res.data || 'Error in login api call.');
                 }
@@ -70,16 +70,13 @@ class App extends Component {
     logoutHandler() {
         const { cookies } = this.props;
         cookies.set("login", '');
-        this.setState({
-            login: ''
-        });
         this.redirectOnHttp();
     }
 
     redirectOnHttps() {
-        if (window.location.protocol != 'https:' && window.location.hostname != 'localhost') {
+        /* if (window.location.protocol != 'https:' && window.location.hostname != 'localhost') {
             window.location.href = 'https:' + window.location.origin.substring(window.location.protocol.length);
-        }
+        } */
     }
 
     redirectOnHttp() {

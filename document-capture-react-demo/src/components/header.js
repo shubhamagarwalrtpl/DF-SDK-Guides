@@ -8,6 +8,9 @@ import {
 import { withCookies, Cookies } from 'react-cookie';
 import Home from './home';
 import Vault from './vault';
+import Selfie from './selfie';
+/* import VideoLiveliness from './video-liveliness'; */
+/* import ScreenCapture from './screen-capture'; */
 
 class Header extends Component {
     constructor(props) {
@@ -38,9 +41,21 @@ class Header extends Component {
                         <li>
                             <NavLink to="/vault" exact>Vault</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/selfie" exact>Selfie</NavLink>
+                        </li>
+                        {/* <li>
+                            <NavLink to="/video" exact>Video</NavLink>
+                        </li> */}
+                        {/* <li>
+                            <NavLink to="/capture" exact>Capture</NavLink>
+                        </li> */}
                     </ul>
                     <Route exact path="/" render={() => <Home logout={this.logoutHandler} />} />
                     <Route exact path="/vault" render={() => <Vault logout={this.logoutHandler} />} />
+                    <Route exact path="/selfie" render={() => <Selfie logout={this.logoutHandler} />} />
+                    {/* <Route exact path="/video" render={() => <VideoLiveliness logout={this.logoutHandler} />} /> */}
+                    {/* <Route exact path="/capture" render={() => <ScreenCapture logout={this.logoutHandler} />} /> */}
                     {this.state.login &&
                         <div className="login-detail">
                             Welcome {this.state.login.name}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router';
-import DataFornixApi from 'data-fornix-api';
+import DataFornixApi from 'data-fornix-web-api';
 import DataFornixVault from 'data-fornix-web-vault';
-import DataFornixDC from 'data-fornix-dc';
+import DataFornixDC from 'data-fornix-web-dc';
 import { withCookies, Cookies } from 'react-cookie';
 import Home from './home';
 import Sidebar from './sidebar';
@@ -89,7 +89,7 @@ class Vault extends Component {
                 styles: style,
                 onComplete: this.vaultAction
             });
-        }, function (error) {
+        }, (error) => {
             this.setState({
                 showLoader: false
             });
@@ -205,7 +205,7 @@ class Vault extends Component {
                 styles: style,
                 onComplete: this.vaultAction
             });
-        }, function (error) {
+        }, (error) => {
             this.setState({
                 showLoader: false
             });

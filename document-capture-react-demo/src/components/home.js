@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import DataFornixApi from 'data-fornix-api';
-import DataFornixDC from 'data-fornix-dc';
+import DataFornixApi from 'data-fornix-web-api';
+import DataFornixDC from 'data-fornix-web-dc';
 import { withCookies, Cookies } from 'react-cookie';
 import { CONSTANT } from './../constants/index';
 import Loader from './loader';
@@ -67,7 +67,7 @@ class Home extends Component {
     }
 
     formChangeHandler(key, value) {
-        const formCurrentVal = {...this.state.apiCapturedDocument};
+        const formCurrentVal = { ...this.state.apiCapturedDocument };
         formCurrentVal[key] = value;
         this.setState({
             apiCapturedDocument: formCurrentVal
@@ -95,8 +95,8 @@ class Home extends Component {
                 documentDataCapturePromise.then((res) => {
                     console.log('User document captured data => ', res);
                     const apiCapturedDocument = res['properties'];
-                    if (apiCapturedDocument && apiCapturedDocument['identity_number']) {
-                        apiCapturedDocument['identity_number'] = apiCapturedDocument['identity_number'].replace(/ /g,'').replace(/^(.{4})(.{4})(.*)$/, "$1 $2 $3");
+                    if (apiCapturedDocument && apiCapturedDocument['identity_number'] && apiCapturedDocument['nationality'] && apiCapturedDocument['nationality'] == 'India') {
+                        apiCapturedDocument['identity_number'] = apiCapturedDocument['identity_number'].replace(/ /g, '').replace(/^(.{4})(.{4})(.*)$/, "$1 $2 $3");
                     }
                     apiCapturedDocument['asset_type'] = res['asset_type'];
                     this.setState({
@@ -208,6 +208,9 @@ class Home extends Component {
             firstPlaceholder = 'Drag front of pan card..';
             secondTitle = 'Back of PAN Card';
             secondPlaceholder = 'Drag back of pan card..';
+        } else if (this.state.documentType == CONSTANT.DOCUMENT_TYPE.IS_RIGHT_TO_WORK) {
+            firstTitle = 'Visa Card';
+            firstPlaceholder = 'Drag visa card here..';
         }
         this.dataFornixWeb = new DataFornixDC({
             containerId: 'documentCapture',
@@ -257,7 +260,7 @@ class Home extends Component {
                             onChange={() => this.changeHandler('documentType', 'Identity Card')} />
                         <span className="checkmark"></span>
                     </label>
-                    <label className="custom-radio">
+                    {/* <label className="custom-radio">
                         PAN Card
                         <input type="radio"
                             checked={this.state.documentType === 'PAN Card'}
@@ -265,7 +268,7 @@ class Home extends Component {
                             value="PAN Card"
                             onChange={() => this.changeHandler('documentType', 'PAN Card')} />
                         <span className="checkmark"></span>
-                    </label>
+                    </label> */}
                     <label className="custom-radio">
                         Passport
                         <input type="radio"
@@ -273,6 +276,15 @@ class Home extends Component {
                             name="document"
                             value="Passport"
                             onChange={() => this.changeHandler('documentType', 'Passport')} />
+                        <span className="checkmark"></span>
+                    </label>
+                    <label className="custom-radio">
+                        Visa
+                        <input type="radio"
+                            checked={this.state.documentType === 'Is Right To Work'}
+                            name="document"
+                            value="Is Right To Work"
+                            onChange={() => this.changeHandler('documentType', 'Is Right To Work')} />
                         <span className="checkmark"></span>
                     </label>
                     <div style={{ overflow: 'auto' }}>
@@ -304,7 +316,7 @@ class Home extends Component {
 
     renderDocumentCapturedData() {
         if (this.state.currentTab == 2) {
-            console.log('this.state.apiCapturedDocument',this.state.apiCapturedDocument)
+            console.log('this.state.apiCapturedDocument', this.state.apiCapturedDocument)
             return (
                 <div className="tab submitFormFields">
                     <strong>User Info:</strong>
@@ -312,7 +324,7 @@ class Home extends Component {
                         Asset Type
                         <input readOnly placeholder="Asset Type" data-required="true" id="asset_type" value={this.state.apiCapturedDocument.asset_type} onChange={(event) => this.formChangeHandler('asset_type', event.target.value)} />
                     </p>
-                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.PASSPORT &&
+                    {(this.state.documentType == CONSTANT.DOCUMENT_TYPE.PASSPORT || this.state.documentType == CONSTANT.DOCUMENT_TYPE.IS_RIGHT_TO_WORK) &&
                         (
                             <p className="passport_number">
                                 Passport Number
@@ -320,13 +332,13 @@ class Home extends Component {
                             </p>
                         )
                     }
-                    {(this.state.documentType == CONSTANT.DOCUMENT_TYPE.DRIVING_LICENCE) && 
+                    {(this.state.documentType == CONSTANT.DOCUMENT_TYPE.DRIVING_LICENCE) &&
                         <p className="licence_number">
                             Licence Number
                             <input type="text" placeholder="licence number" id="licence_number" value={this.state.apiCapturedDocument.licence_number} onChange={(event) => this.formChangeHandler('licence_number', event.target.value)} />
                         </p>
                     }
-                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.IDENTITY_CARD && 
+                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.IDENTITY_CARD &&
                         (
                             <p className="identity_number">
                                 Identity Number
@@ -339,6 +351,14 @@ class Home extends Component {
                             <p className="pan_number">
                                 PAN Number
                                 <input type="text" placeholder="pan number" id="pan_number" value={this.state.apiCapturedDocument.pan_number} onChange={(event) => this.formChangeHandler('pan_number', event.target.value)} />
+                            </p>
+                        )
+                    }
+                    {this.state.documentType == CONSTANT.DOCUMENT_TYPE.IS_RIGHT_TO_WORK &&
+                        (
+                            <p className="visa_number">
+                                VISA Number
+                                <input type="text" placeholder="visa number" id="visa_number" value={this.state.apiCapturedDocument.visa_number} onChange={(event) => this.formChangeHandler('visa_number', event.target.value)} />
                             </p>
                         )
                     }
@@ -366,22 +386,30 @@ class Home extends Component {
                         </p>
                     }
                     <p className="address">Address
-                        <textarea placeholder="Address" id="address" value={this.state.apiCapturedDocument.address  || ''} onChange={(event) => this.formChangeHandler('address', event.target.value)}></textarea>
+                        <textarea placeholder="Address" id="address" value={this.state.apiCapturedDocument.address || ''} onChange={(event) => this.formChangeHandler('address', event.target.value)}></textarea>
                     </p>
-                    <p className="birth_date">
-                        DOB
+                    {this.state.documentType != CONSTANT.DOCUMENT_TYPE.IS_RIGHT_TO_WORK &&
+                        (
+                            <p className="birth_date">
+                                DOB
                         <input placeholder="DOB" type="date" id="birth_date" value={this.state.apiCapturedDocument.birth_date || ''} onChange={(event) => this.formChangeHandler('birth_date', event.target.value)} />
-                    </p>
+                            </p>
+                        )
+                    }
                     {this.state.apiCapturedDocument.father_name &&
                         <p className="father_name">
                             Father Name
                             <input placeholder="father name" type="text" id="father_name" value={this.state.apiCapturedDocument.father_name} onChange={(event) => this.formChangeHandler('father_name', event.target.value)} />
                         </p>
                     }
-                    <p className="issue_date">
-                        Issue Date
-                        <input placeholder="Expire Date" type="date" id="issue_date" value={this.state.apiCapturedDocument.issue_date || ''} onChange={(event) => this.formChangeHandler('issue_date', event.target.value)} />
-                    </p>
+                    {(this.state.apiCapturedDocument.issue_date) &&
+                        (
+                            <p className="issue_date">
+                                Issue Date
+                                <input placeholder="Issue Date" type="date" id="issue_date" value={this.state.apiCapturedDocument.issue_date || ''} onChange={(event) => this.formChangeHandler('issue_date', event.target.value)} />
+                            </p>
+                        )
+                    }
                     <p className="expiry_date">
                         Expiry Date
                         <input placeholder="Expire Date" type="date" id="expiry_date" value={this.state.apiCapturedDocument.expiry_date || ''} onChange={(event) => this.formChangeHandler('expiry_date', event.target.value)} />
@@ -392,10 +420,14 @@ class Home extends Component {
                             <input placeholder="State" type="text" id="state" value={this.state.apiCapturedDocument.state} onChange={(event) => this.formChangeHandler('state', event.target.value)} />
                         </p>
                     }
-                    <p>
-                        Nationality
-                        <input placeholder="Nationality" data-required="true" id="nationality" value={this.state.apiCapturedDocument.nationality} onChange={(event) => this.formChangeHandler('nationality', event.target.value)} />
-                    </p>
+                    {this.state.documentType != CONSTANT.DOCUMENT_TYPE.IS_RIGHT_TO_WORK &&
+                        (
+                            <p>
+                                Nationality
+                                <input placeholder="Nationality" data-required="true" id="nationality" value={this.state.apiCapturedDocument.nationality} onChange={(event) => this.formChangeHandler('nationality', event.target.value)} />
+                            </p>
+                        )
+                    }
 
                     <div style={{ overflow: 'auto' }}>
                         <div style={{ float: 'right' }}>
