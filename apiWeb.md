@@ -109,6 +109,9 @@ Method | Description
 [**organisationAllAssetRequest**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/organisationAllAssetRequest.md) | Responsiable for send list of organisation request for all assets.
 [**updateAssetDetails**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/updateAssetDetails.md) | Responsiable for update asset data and store.
 [**uploadAssetRequest**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/uploadAssetRequest.md) | Responsiable for send list of upload asset request.
+[**generateSelfieToken**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/generateSelfieToken.md) | Responsiable for get selfie token.
+[**selfieVerifyWithToken**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/selfieVerifyWithToken.md) | Responsiable for send selfie using unique token.
+[**getSelfieResult**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/getSelfieResult.md) | Responsiable for get selfie match status with other asset.
 
 
 ## Documentation for Method
@@ -125,3 +128,6 @@ Method | Description
  - [organisationAllAssetRequest](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/organisationAllAssetRequest.md)
  - [updateAssetDetails](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/updateAssetDetails.md)
  - [uploadAssetRequest](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/uploadAssetRequest.md)
+ - [generateSelfieToken](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/generateSelfieToken.md)
+ - [selfieVerifyWithToken](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/selfieVerifyWithToken.md)
+ - [getSelfieResult](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/getSelfieResult.md)
