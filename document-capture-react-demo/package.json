@@ -4,9 +4,7 @@
   "private": true,
   "dependencies": {
     "crypto-js": "^3.1.9-1",
-    "data-fornix-web-api": "0.0.1",
     "data-fornix-web-dc": "0.0.1",
-    "data-fornix-web-selfie-check": "0.0.1",
     "data-fornix-web-vault": "0.0.1",
     "jsencrypt": "^3.0.0-rc.1",
     "react": "^16.7.0",
