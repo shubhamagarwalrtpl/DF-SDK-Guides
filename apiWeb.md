@@ -98,6 +98,7 @@ Following parameters are using to initialize API SDK:
 Method | Description
 ------------- | ------------- |
 [**createUser**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/CreateUser.md) | This method is for get user details from database before other api call.
+[**createUserToken**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/CreateUserToken.md) | This method is for generate unique token for user and return saved details from database.
 [**documentDataCapture**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentCapture.md) | This method is for capture data from provided documents.
 [**documentDataSave**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentSave.md) | This method is for save captured document into database.
 [**checkVideo**](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/checkVideo.md) | Responsiable for store and verify user video.
@@ -117,6 +118,7 @@ Method | Description
 ## Documentation for Method
 
  - [createUser](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/CreateUser.md)
+ - [createUserToken](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/CreateUserToken.md)
  - [documentDataCapture](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentCapture.md)
  - [documentDataSave](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/DocumentSave.md)
  - [checkVideo](https://github.com/anandramdeo-df/DF-ReadMes/blob/master/docs/checkVideo.md)
