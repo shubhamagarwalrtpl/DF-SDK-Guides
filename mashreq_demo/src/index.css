@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+} */
+
+/* .overlay {
+    border: 1px solid #00c8a0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 0 0 75px rgba(0, 0, 0, 0.7);
+    width: 640px;
+    height: 480px;
+} */
+
+/* .overlay {
+    border: 1px solid #00c8a0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 45%);
+    box-shadow: 0 0 0 114px rgba(0, 0, 0, 0.7);
+} */
+
+.sdk-container {
+    flex: 1 1;
+    margin-top: 35px;
+}
+
+#vaultElement {
+    flex: 1 1;
+    margin-left: 200px;
+    margin-top: 82px;
+    margin-bottom: 20px;
+}
+
+/* sidebar */
+.sidebar {
+    width: 200px;
+    margin-left: 0;
+    margin-top: -27px;
+    position: fixed;
+    z-index: 1019;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    /* color: #fff;
+    background: #2f353a; */
+
+    color: #2f353a;
+    border-right: 1px solid #2f353a;
+    height: 100%;
+}
+
+.sidebar .nav {
+    width: 200px;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .nav-item {
+    position: relative;
+    margin: 0;
+    transition: background .3s ease-in-out;
+}
+
+.sidebar .nav-link {
+    display: block;
+    padding: .75rem 1rem;
+    color: #2f353a;
+    text-decoration: none;
+    background: 0 0;
+    cursor: pointer;
+    border-bottom: 1px solid #7b848c;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background: #2f353a;
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background: #3a4248;
+}
+
+.page-title {
+    text-align: center;
+    display: block;
+    padding: 6px 0px 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+/* header */
+.header-main .login-detail {
+    position: fixed;
+    top: 17px;
+    right: 25px;
+    z-index: 1040;
+    text-align: center;
+}
+
+.header-main ul.header-nav {
+    position: fixed;
+    z-index: 1020;
+    width: 100%;
+    transition: margin-left .25s,margin-right .25s,width .25s,flex .25s;
+    flex: 0 0 55px;
+    height: 55px;
+
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #3a4248;
+    padding: 5px;
+    margin: 0px;
+    background-color: #fff;
+    border-bottom: 1px solid #2f353a;
+    top: 0;
+}
+
+.header-main ul.header-nav li {
+    position: relative;
+    min-width: 50px;
+    margin: 0 2px 0 2px;
+    text-align: center;
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+    cursor: pointer;
+    height: 100%;
+    padding: 14px 0 0 0;
+}
+
+.header-main ul.header-nav li a {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: 0;
+    color: #73818f;
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+    text-decoration: none;
+}
+
+.header-main ul.header-nav li a.active {
+    text-decoration: underline;
+    text-decoration-color: #3a4248;
+    color: #3a4248;
+    /* font-weight: bold; */
+}
+
+.header-main ul.header-nav li a:hover {
+    color: #2f353a;
+}
