@@ -40,10 +40,10 @@ $ npm install --save data-fornix-web-video-liveliness
 
 ```js
 // ES6 module import
-import DfVideo from 'data-fornix-web-video-liveliness'
+import DataFornixVideo from 'data-fornix-web-video-liveliness'
 
 // commonjs style require
-var DfVideo = require('data-fornix-web-video-liveliness')
+var DataFornixVideo = require('data-fornix-web-video-liveliness')
 ```
 
 #### Notice
@@ -66,8 +66,8 @@ You are now ready to initialise the SDK:
 
 ```js
 // Create instance of DataFornix Video Liveliness SDK
-// and store it in `DfVideoObj` for future use
-const DfVideoObj = new DfVideo({
+// and store it in `DataFornixVideoObj` for future use
+const DataFornixVideoObj = new DataFornixVideo({
     // the SDK token
     token: 'YOUR_SDK_TOKEN',
     // id of the element you want to mount the component on
@@ -101,7 +101,7 @@ Congratulations! You have successfully started the flow. Carry on reading the ne
   Here is an `onComplete` example:
 
   ```js  
-  const DfVideoObj = new DfVideo({
+  const DataFornixVideoObj = new DataFornixVideo({
     token: 'YOUR_SDK_TOKEN',
     containerId: 'video-element',
     onComplete: videoCallback
@@ -120,10 +120,10 @@ Congratulations! You have successfully started the flow. Carry on reading the ne
 If you are embedding the SDK inside a single page app, you can call the `clearState` function to remove the SDK complelety from the current webpage. It will reset state and you can safely re-initialise the SDK inside the same webpage later on.
 
 ```javascript
-const DfVideoObj = new DfVideo({...})
+const DataFornixVideoObj = new DataFornixVideo({...})
 ...
-if (this.DfVideoObj) {
-    this.DfVideoObj.clearState();
+if (this.DataFornixVideoObj) {
+    this.DataFornixVideoObj.clearState();
 }
 ```
 
@@ -158,7 +158,7 @@ A number of options are available to allow you to customise the SDK UI:
         }
     }`;
 
-     const DfVideoObj = new DfVideo({
+     const DataFornixVideoObj = new DataFornixVideo({
         token: 'YOUR_SDK_TOKEN',
         containerId: 'video-element',
         styles: style,
