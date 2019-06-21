@@ -10,7 +10,7 @@ import Home from './home';
 import Vault from './vault';
 import Selfie from './selfie';
 import Selfietoken from './selfie-with-token';
-/* import VideoLiveliness from './video-liveliness'; */
+import VideoLiveliness from './video-liveliness';
 /* import ScreenCapture from './screen-capture'; */
 
 class Header extends Component {
@@ -45,21 +45,21 @@ class Header extends Component {
                         <li>
                             <NavLink to="/selfie" exact>Selfie</NavLink>
                         </li>
-                        {/* <li>
+                        <li>
                             <NavLink to="/video" exact>Video</NavLink>
-                        </li> */}
+                        </li>
                         {/* <li>
                             <NavLink to="/capture" exact>Capture</NavLink>
                         </li> */}
-                        <li>
+                        {/* <li>
                             <NavLink to="/selfie-with-token/5534e3d0-c83d-4b9c-bbc9-3473f4a89260" exact>Selfie with Token</NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                     <Route exact path="/" render={() => <Home logout={this.logoutHandler} />} />
                     <Route exact path="/vault" render={() => <Vault logout={this.logoutHandler} />} />
                     <Route exact path="/selfie" render={() => <Selfie logout={this.logoutHandler} />} />
-                    <Route exact path="/selfie-with-token/:selfie_token" render={() => <Selfietoken logout={this.logoutHandler} />} />
-                    {/* <Route exact path="/video" render={() => <VideoLiveliness logout={this.logoutHandler} />} /> */}
+                    {/* <Route exact path="/selfie-with-token/:selfie_token" render={() => <Selfietoken logout={this.logoutHandler} />} /> */}
+                    <Route exact path="/video" render={() => <VideoLiveliness logout={this.logoutHandler} />} />
                     {/* <Route exact path="/capture" render={() => <ScreenCapture logout={this.logoutHandler} />} /> */}
                     {this.state.login &&
                         <div className="login-detail">

@@ -47,7 +47,6 @@ class App extends Component {
             showLoader: true
         });
         DataService.post(CONSTANT.API_URL.LOGIN, data, (res) => {
-            console.log('res', res);
             this.setState({
                 showLoader: false
             });
@@ -74,9 +73,9 @@ class App extends Component {
     }
 
     redirectOnHttps() {
-        /* if (window.location.protocol != 'https:' && window.location.hostname != 'localhost') {
+        if (window.location.protocol != 'https:' && window.location.hostname != 'localhost') {
             window.location.href = 'https:' + window.location.origin.substring(window.location.protocol.length);
-        } */
+        }
     }
 
     redirectOnHttp() {

@@ -22,7 +22,7 @@ class Selfietoken extends Component {
     constructor(props) {
         super(props);
         this.apiServer = new DataFornixApi(CONSTANT.API_TOKEN, function (res) {
-            console.log(res);
+            //console.log(res);
         });
 
         this.state = {
@@ -55,7 +55,7 @@ class Selfietoken extends Component {
     }
 
     selfieObjectHandler(res) {
-        console.log(res);
+        //console.log(res);
         const { match: { params } } = this.props;
         if (res && res.profile_pic) {
             this.setState({

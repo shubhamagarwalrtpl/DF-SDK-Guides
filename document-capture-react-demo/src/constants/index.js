@@ -10,7 +10,9 @@ export const CONSTANT = {
         IDENTITY_CARD: 'Identity Card',
         PAN_CARD: 'PAN Card',
         PASSPORT: 'Passport',
-        IS_RIGHT_TO_WORK: 'Is Right To Work'
+        IS_RIGHT_TO_WORK: 'Is Right To Work',
+        GASS_BILL: 'Gas Bill',
+        ADDRESS_PROOF: 'Address Proof'
     },
     VAULT_TYPE: {
         ASSET_LIST: 'asset',
@@ -28,6 +30,6 @@ export const CONSTANT = {
         REQUEST_FOR_ALL_ASSET_ALLOW: 'request-all-allow',
         UPLOAD_ASSET_REQUEST: 'upload'
     },
-    API_TOKEN: 'pruvista:uwzVgdEu4lmfBMHtcSRkXgDJdGTZMIeF',
-    SDK_TOKEN: 'pruvista:NILhukSitPMCsALtUKcrnPHgLUrukTne'
+    API_TOKEN: 'mashreq:vB2lWt8gicVs34yXoxH62VsjeLPWCxrH', //'ranosys:BqNkv0reBlB9iOlioCjDCZmsyEq5o0gZ',
+    SDK_TOKEN: 'mashreq:kcLk01Twys5WBziFkm55J4oWw43QMQ3t'
 };
