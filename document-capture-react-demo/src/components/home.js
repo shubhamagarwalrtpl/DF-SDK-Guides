@@ -263,6 +263,19 @@ class Home extends Component {
         return null
     }
 
+    renderMetaData(data) {
+        if (data && Array.isArray(data)) {
+            return (
+                <ol>
+                    {data.map((value, index) => {
+                        return <li key={index}>{value['label'] || value['object']} ==> {value['score']}</li>
+                    })}
+                </ol>
+            );
+        }
+        return null
+    }
+
     renderDocumentCapturedData() {
         if (this.state.currentTab == 2) {
             return (
@@ -456,6 +469,13 @@ class Home extends Component {
                         <div className="confidence_score">
                             Confidence Score
                             {this.renderConfidenceScore(this.state.apiCapturedDocument.confidence_score)}
+                        </div>
+                    }
+
+                    {this.state.apiCapturedDocument.meta_data !== undefined &&
+                        <div className="confidence_score">
+                            <b>Meta Data:</b>
+                            {this.renderMetaData(this.state.apiCapturedDocument.meta_data)}
                         </div>
                     }
                 </div>
