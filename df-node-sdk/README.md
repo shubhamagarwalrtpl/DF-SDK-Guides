@@ -1,57 +1,74 @@
-Express & ES6 REST API Boilerplate
+DataFornix: Node API's
 ==================================
 
-This is a straightforward boilerplate for building REST APIs with ES6 and Express.
+For local setup, run following commands
 
-- ES6 support via [babel](https://babeljs.io)
-- REST resources as middleware via [resource-router-middleware](https://github.com/developit/resource-router-middleware)
-- CORS support via [cors](https://github.com/troygoode/node-cors)
-- Body Parsing via [body-parser](https://github.com/expressjs/body-parser)
+##### Install dependencies
+`
+npm installl
+`
 
-> Tip: If you are using [Mongoose](https://github.com/Automattic/mongoose), you can automatically expose your Models as REST resources using [restful-mongoose](https://git.io/restful-mongoose).
+##### Run app
+`
+npm start
+`
 
 
+## API's
 
-Getting Started
----------------
+#### 1. Create User
 
-```sh
-# clone it
-git clone git@github.com:developit/express-es6-rest-api.git
-cd express-es6-rest-api
+**Note**: You must call create user api first before any other api. It will return you token in **_id** key. That key will pass in other api call as **auth_token**
 
-# Make it your own
-rm -rf .git && git init && npm init
+This api is responsiable for create user.
 
-# Install dependencies
-npm install
+##### 1.1 **API URL**  
+`https://df-node-api.herokuapp.com/api/create-user`
 
-# Start development live-reload server
-PORT=8080 npm run dev
+##### 1.2 **Method Type**
+`POST`
 
-# Start production server:
-PORT=8080 npm start
-```
-Docker Support
-------
-```sh
-cd express-es6-rest-api
+##### 1.3 **Require Parameters**
+````js
+{
+	"email": "test@gmail.com",
+    "name": "test",
+    "phone_number": "9874563211",
+    "country_code": "91"
+    "token": "datafornix:234234"
+}
+````
 
-# Build your docker
-docker build -t es6/api-service .
-#            ^      ^           ^
-#          tag  tag name      Dockerfile location
+##### 1.4 **Return Response**
 
-# run your docker
-docker run -p 8080:8080 es6/api-service
-#                 ^            ^
-#          bind the port    container tag
-#          to your host
-#          machine port   
+It will return following object array.
 
 ```
+{
+    "_id": "5cdec08fa920c440dd56af2a",
+    "email": "test@gmail.com",
+    "name": "test",
+    "phone_number": "9874563211",
+    "country_code": "91"
+}
+```
 
-License
--------
+#### 2. Document Capture
 
-MIT
+This api is responsiable for get OCR data of provided documents. 
+
+##### 2.1 **API URL**  
+`https://df-node-api.herokuapp.com/api/document-capture`
+
+##### 2.2 **Method Type**
+`POST`
+**Note**: You need to send request data in Form Data Object.
+
+##### 2.3 **Require Parameters**
+````js
+asset_type: 'Identity Card' // or 'Driving Licence', 'Passport'
+front_image: Front_Image Form Data
+back_image: Back_Image Form Data
+auth_token: '5cdec08fa920c440dd56af2a' // Token that you will received from create user api
+````
+
