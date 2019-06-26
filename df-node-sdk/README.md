@@ -13,10 +13,15 @@ npm installl
 npm start
 `
 
+It will run on following url
+`
+http://localhost:8080
+`
+
 
 ## API's
 
-#### 1. Create User
+### 1. Create User
 
 **Note**: You must call create user api first before any other api. It will return you token in **_id** key. That key will pass in other api call as **auth_token**
 
@@ -53,7 +58,7 @@ It will return following object array.
 }
 ```
 
-#### 2. Document Capture
+### 2. Document Capture
 
 This api is responsiable for get OCR data of provided documents. 
 
