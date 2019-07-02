@@ -102,7 +102,10 @@ This api is responsiable for get selfie image and verify it with user other docu
 ##### Request ( ** form-data **  )
 
 ````js
-"selfie_image" : "<image form data here...>"
+"selfie_image" : "<image form data here...>",
+"channel": "web", //optional
+"reference_number": "", //optional
+"type_of_request": "" //optional
 ````
 
 ##### Headers
