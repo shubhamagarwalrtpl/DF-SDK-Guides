@@ -32,7 +32,7 @@ This api is responsiable for create user.
 
 ````js
 {
-    "api_token": "tenantName:tokenKey"
+    "api_token": "< add valid api_token here >"
 }
 ````
 
@@ -83,6 +83,63 @@ This api is responsiable for get OCR data of provided documents.
 ````js
 {
     "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
-    "api_token": "tenantName:tokenKey"
+    "api_token": "< add valid api_token here >"
 }
 ````
+
+### 3. Selfie Check
+
+This api is responsiable for get selfie image and verify it with user other documents images.
+
+##### 3.1 **API URL**  
+`http://api.datafornix.com:8081/api/selfie-check`
+
+##### 3.2 **Method Type**
+`POST`
+
+##### 3.3 **Require Parameters**
+
+##### Request ( ** form-data **  )
+
+````js
+"selfie_image" : "<image form data here...>"
+````
+
+##### Headers
+
+````js
+{
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "api_token": "< add valid api_token here >"
+}
+````
+
+##### 3.4 **Return Response**
+
+It will return following object array.
+
+```
+{
+    "overall_result": false,
+    "comparison_result": [
+        {
+            "asset_type": "Driving Licence",
+            "user_pic": "http://userDocument_url",
+            "selfie_pic": "http://userSelfie_url",
+            "is_matched": true
+        },
+        {
+            "asset_type": "Passport",
+            "user_pic": "http://userDocument_url",
+            "selfie_pic": "http://userSelfie_url",
+            "is_matched": true
+        },
+        {
+            "asset_type": "Identity Card",
+            "user_pic": "http://userDocument_url",
+            "selfie_pic": "http://userSelfie_url",
+            "is_matched": false
+        }
+    ]
+}
+```
