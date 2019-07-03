@@ -3,9 +3,9 @@ DataFornix: Node API's
 
 ## API's
 
-### 1. Create User
+### 1. Create User Token
 
-**Note**: You must call create user api first before any other api. It will return you token in **_id** key. That key will pass in other api call as **auth_token** header
+**Note**: You must call create user token api first before any other api. It will return you token in **_id** key. That key will pass in other api call as **auth_token** header
 
 This api is responsiable for create user.
 
@@ -50,17 +50,66 @@ It will return following object array.
 }
 ```
 
-### 2. Document Capture
+### 2. Update User
 
-This api is responsiable for get OCR data of provided documents. 
+This api is responsiable for update user.
 
 ##### 2.1 **API URL**  
-`http://api.datafornix.com:8081/api/document-capture`
+`http://api.datafornix.com:8081/api/update-user-token`
 
 ##### 2.2 **Method Type**
 `POST`
 
 ##### 2.3 **Require Parameters**
+
+##### Request ( ** application/json**  )
+
+````js
+{
+    "user_new_token": "12345abcdef", // Required: user unique token here
+    "reference_number": "reference number here", // Required
+    "channel": "web", // optional
+    "type_of_request": "request type here" // optional
+}
+````
+
+##### Headers
+
+````js
+{
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "api_token": "< add valid api_token here >"
+}
+````
+
+##### 2.4 **Return Response**
+
+It will return following object array.
+
+```
+{
+    "data": {
+        "_id": "5d1c8560a920c49d8ecb5dfe",
+        "name": "guest_12345abcdef",
+        "token": "12345abcdef",
+        "reference_number": "test",
+        "channel": "",
+        "type_of_request": ""
+    }
+}
+```
+
+### 3. Document Capture
+
+This api is responsiable for get OCR data of provided documents. 
+
+##### 3.1 **API URL**  
+`http://api.datafornix.com:8081/api/document-capture`
+
+##### 3.2 **Method Type**
+`POST`
+
+##### 3.3 **Require Parameters**
 
 ##### Request ( ** application/json **  )
 ````js
@@ -88,17 +137,17 @@ This api is responsiable for get OCR data of provided documents.
 ````
 
 
-### 3. Document Save
+### 4. Document Save
 
 This api is responsiable for save captured document result into database.
 
-##### 3.1 **API URL**  
+##### 4.1 **API URL**  
 `http://api.datafornix.com:8081/api/document-save`
 
-##### 3.2 **Method Type**
+##### 4.2 **Method Type**
 `POST`
 
-##### 3.3 **Require Parameters**
+##### 4.3 **Require Parameters**
 
 ##### Request ( ** application/json **  )
 
@@ -165,7 +214,7 @@ This api is responsiable for save captured document result into database.
 }
 ````
 
-##### 3.4 **Return Response**
+##### 4.4 **Return Response**
 
 It will return following object array.
 
@@ -179,17 +228,17 @@ It will return following object array.
 ```
 
 
-### 4. Selfie Check
+### 5. Selfie Check
 
 This api is responsiable for get selfie image and verify it with user other documents images.
 
-##### 4.1 **API URL**  
+##### 5.1 **API URL**  
 `http://api.datafornix.com:8081/api/selfie-check`
 
-##### 4.2 **Method Type**
+##### 5.2 **Method Type**
 `POST`
 
-##### 4.3 **Require Parameters**
+##### 5.3 **Require Parameters**
 
 ##### Request ( ** form-data **  )
 
@@ -209,7 +258,7 @@ This api is responsiable for get selfie image and verify it with user other docu
 }
 ````
 
-##### 4.4 **Return Response**
+##### 5.4 **Return Response**
 
 It will return following object array.
 
@@ -236,5 +285,53 @@ It will return following object array.
             "is_matched": false
         }
     ]
+}
+```
+
+### 6. Image Compare
+
+This api is responsiable for compare two image url's.
+
+##### 6.1 **API URL**  
+`http://api.datafornix.com:8081/api/compare-image`
+
+##### 6.2 **Method Type**
+`POST`
+
+##### 6.3 **Require Parameters**
+
+##### Request ( ** application/json **  )
+
+````js
+{
+	"first_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
+	"second_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
+	"reference_number": "1234"
+    "channel": "web", //optional
+    "type_of_request": "" //optional
+}
+````
+
+##### Headers
+
+````js
+{
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "api_token": "< add valid api_token here >"
+}
+````
+
+##### 6.4 **Return Response**
+
+It will return following object array.
+
+```js
+{
+    "first_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
+    "second_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
+    "is_matched": true / false,
+    "reference_number": "1234",
+    "channel": "",
+    "type_of_request": ""
 }
 ```
