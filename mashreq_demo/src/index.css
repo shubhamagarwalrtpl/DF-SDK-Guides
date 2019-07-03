@@ -35,7 +35,8 @@ body {
 
 .sdk-container {
     flex: 1 1;
-    margin-top: 35px;
+    margin-left: 200px;
+    margin-top: 82px;
 }
 
 #vaultElement {
@@ -102,10 +103,10 @@ body {
     display: block;
     padding: 6px 0px 0px;
     position: absolute;
-    top: 0px;
+    top: 55px;
     width: 100%;
+    padding-left: 200px;
     box-sizing: border-box;
-    font-size: 20px;
 }
 
 /* header */

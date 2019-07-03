@@ -57,10 +57,6 @@ input.invalid {
     /* height: calc(100vh - 55px); */
 }
 
-.tab.submitFormFields {
-    text-align: left;
-}
-
 button {
     background-color: #4CAF50;
     color: #ffffff;
@@ -173,7 +169,7 @@ button:hover {
 .checkmark {
     position: absolute;
     top: 0;
-    margin-left: 10px;
+    left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
