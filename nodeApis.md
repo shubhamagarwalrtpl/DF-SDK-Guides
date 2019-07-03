@@ -21,9 +21,9 @@ This api is responsiable for create user.
 
 ````js
 {
-	"user_token": "a4dvvd23", // user unique token here
+    "user_token": "a4dvvd23", // Required: user unique token here
+    "reference_number": "reference number here", // Required
     "channel": "web", // optional
-    "reference_number": "reference number here",
     "type_of_request": "request type here" // optional
 }
 ````
@@ -114,16 +114,16 @@ This api is responsiable for get OCR data of provided documents.
 ##### Request ( ** application/json **  )
 ````js
 {
-    "document_type": 'Identity Card' // or 'Driving Licence', 'Passport'
-    "channel": "web", // optional
-    "reference_number": "reference number here",
-    "type_of_request": "request type here" // optional
+    "document_type": 'Identity Card' // Required: or 'Driving Licence', 'Passport'
+    "reference_number": "reference number here", // Required
     "images": [{
         "image_string": "image base64 string here",
         "authority": "authority string herer"
     }, {
         ...
-    }]
+    }], // Required
+    "channel": "web", // optional
+    "type_of_request": "request type here" // optional
 }
 ````
 
@@ -243,9 +243,9 @@ This api is responsiable for get selfie image and verify it with user other docu
 ##### Request ( ** form-data **  )
 
 ````js
-"selfie_image" : "<image form data here...>",
+"selfie_image" : "<image form data here...>", // Required
+"reference_number": "", // Required
 "channel": "web", //optional
-"reference_number": "",
 "type_of_request": "" //optional
 ````
 
@@ -304,9 +304,9 @@ This api is responsiable for compare two image url's.
 
 ````js
 {
-	"first_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
-	"second_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
-	"reference_number": "1234"
+	"first_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01", // Required
+	"second_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01", // Required
+	"reference_number": "1234", // Required
     "channel": "web", //optional
     "type_of_request": "" //optional
 }
