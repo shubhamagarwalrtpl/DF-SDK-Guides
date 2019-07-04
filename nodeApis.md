@@ -240,13 +240,15 @@ This api is responsiable for get selfie image and verify it with user other docu
 
 ##### 5.3 **Require Parameters**
 
-##### Request ( ** form-data **  )
+##### Request ( ** application/json **  )
 
 ````js
-"selfie_image" : "<image form data here...>", // Required
-"reference_number": "", // Required
-"channel": "web", //optional
-"type_of_request": "" //optional
+{
+    "selfie_image" : "<image base64 data here...>", // Required
+    "reference_number": "", // Required
+    "channel": "web", //optional
+    "type_of_request": "" //optional
+}
 ````
 
 ##### Headers
