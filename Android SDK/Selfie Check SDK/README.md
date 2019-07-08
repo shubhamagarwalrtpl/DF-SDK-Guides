@@ -12,9 +12,20 @@ This SDK is created to automatically capture the user's selfie using the facial 
 allprojects {
    repositories {
       jcenter()
-       maven { url "https://dl.bintray.com/datafornix/selfiecheck" }
+       maven { 
+       	    url "https://dl.bintray.com/datafornix/selfiecheck" 
+	}
+    maven { 
+            url "https://dl.bintray.com/datafornix/opencvlib" 
+       }
     }
  } 
+```
+- In your app level `AndroidMenifest.xml` add this permissions:
+```sh 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
 - In your app level `build.gradle` add this dependency:
 ```sh
