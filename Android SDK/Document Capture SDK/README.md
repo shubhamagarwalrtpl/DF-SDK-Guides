@@ -20,6 +20,9 @@ allprojects {
        maven {
             url "https://dl.bintray.com/datafornix/documentscanner" 
        }
+       maven { 
+            url "https://dl.bintray.com/datafornix/opencvlib" 
+       }
     }
  } 
 ```
