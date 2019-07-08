@@ -15,7 +15,7 @@ allprojects {
        maven { 
        	    url "https://dl.bintray.com/datafornix/selfiecheck" 
 	}
-    maven { 
+       maven { 
             url "https://dl.bintray.com/datafornix/opencvlib" 
        }
     }
