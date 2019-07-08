@@ -26,7 +26,7 @@ private lateinit var selfieCheckInstance: SelfieCheckInstance
 ```
 - Initialise this object with your `sdkToken`
 ```sh
-selfieCheckInstance = SelfieCheckInstance(this, YOUR_SDK_TOKEN)
+selfieCheckInstance = SelfieCheckInstance(this, "YOUR_SDK_TOKEN", "YOUR BASE URL")
 ```
 
 #### You can customise the colour and theme of the SDK's view according to your project's user-experience.
