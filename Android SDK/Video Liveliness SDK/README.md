@@ -18,6 +18,12 @@ allprojects {
     }
  } 
 ```
+- In your app level `AndroidMenifest.xml` add this permissions:
+```sh 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+```
 - In your app level `build.gradle` add this dependency:
 ```sh
 implementation 'dfvideoliveliness:dfvideoliveliness:1.0.0'
