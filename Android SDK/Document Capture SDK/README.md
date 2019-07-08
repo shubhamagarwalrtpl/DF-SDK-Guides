@@ -33,7 +33,7 @@ private lateinit var documentCaptureInstance: DocumentCaptureInstance
 ```
 - Initialise this object with your `sdkToken`
 ```sh
-documentCaptureInstance = DocumentCaptureInstance(this, "YOUR_SDK_TOKEN")
+documentCaptureInstance = DocumentCaptureInstance(this, "YOUR_SDK_TOKEN", "YOUR BASE URL")
 ```
 
 #### You can customise the colour and theme of the SDK's view according to your project's user-experience.
