@@ -28,7 +28,7 @@ DataFornixSdk.initializeSdk("YOUR_API_TOKEN", "YOUR BASE URL")
 - Call `all_api_calling` function from `DataFornixSdk` as example:
 ```sh
 DataFornixSdk.sendImageForSelfieCheck(this,
-            loggedInUserId, imagePath, object : ApiCallback<UploadAssetBasicResponse> {
+            authToken, imagePath, object : ApiCallback<UploadAssetBasicResponse> {
                 override fun onError(message: String) {
                     showMessage(message)
                 }
