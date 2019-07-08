@@ -23,7 +23,7 @@ implementation 'dfapimodule:dfapimodule:1.0.0'
 ```
 - Initialise `DataFornixSdk` object with your `apiToken`
 ```sh
-DataFornixSdk.initializeSdk(YOUR_API_TOKEN)
+DataFornixSdk.initializeSdk("YOUR_API_TOKEN", "YOUR BASE URL")
 ```
 - Call `all_api_calling` function from `DataFornixSdk` as example:
 ```sh
