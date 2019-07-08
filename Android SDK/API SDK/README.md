@@ -25,7 +25,7 @@ implementation 'dfapimodule:dfapimodule:1.0.0'
 ```sh
 DataFornixSdk.initializeSdk("YOUR_API_TOKEN", "YOUR BASE URL")
 ```
-- Call `all_api_calling` function from `DataFornixSdk` as example:
+- Call `any_api_calling` function from `DataFornixSdk` as example:
 ```sh
 DataFornixSdk.sendImageForSelfieCheck(this,
             authToken, imagePath, object : ApiCallback<UploadAssetBasicResponse> {
