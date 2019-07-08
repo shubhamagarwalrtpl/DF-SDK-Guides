@@ -28,7 +28,7 @@ private lateinit var videoLivelinessInstance: VideoLivelinessVerifier
 ```
 - Initialise this object with your `sdkToken`
 ```sh
-videoLivelinessInstance = VideoLivelinessVerifier(this, YOUR_SDK_TOKEN)
+videoLivelinessInstance = VideoLivelinessVerifier(this, "YOUR_SDK_TOKEN", "YOUR_BASE_URL")
 ```
 
 #### You can customise the colour and theme of the SDK's view according to your project's user-experience.
