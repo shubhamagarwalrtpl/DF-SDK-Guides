@@ -32,7 +32,7 @@ private lateinit var datafornixVaultSdk: DatafornixVaultSdk
 ```
 - Initialise this object with your `sdkToken`
 ```sh
-datafornixVaultSdk = DatafornixVaultSdk(this, "YOUR_SDK_TOKEN")
+datafornixVaultSdk = DatafornixVaultSdk(this, "YOUR_SDK_TOKEN", "YOUR BASE URL")
 ```
 
 #### You can customise the colour and theme of the SDK's view according to your project's user-experience.
