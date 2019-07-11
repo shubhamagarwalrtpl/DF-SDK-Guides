@@ -5,7 +5,7 @@ DataFornix: Node API's
 
 ### 1. Create User Token
 
-**Note**: You must call create user token api first before any other api. It will return you token in **_id** key. That key will pass in other api call as **auth_token** header
+**Note**: You must call create user token api first before any other api. It will return you token in **auth_token** key. That key will pass in other api call as **auth_token** header
 
 This api is responsiable for create user.
 
@@ -42,7 +42,7 @@ It will return following object array.
 
 ```
 {
-    "_id": "5cdec08fa920c440dd56af2a",
+    "auth_token": "5cdec08fa920c440dd56af2a",
     "name": "test",
     "channel": "web",
     "reference_number": "1234",
@@ -77,7 +77,7 @@ This api is responsiable for update user.
 
 ````js
 {
-    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => auth_token key response
     "api_token": "< add valid api_token here >"
 }
 ````
@@ -89,7 +89,7 @@ It will return following object array.
 ```
 {
     "data": {
-        "_id": "5d1c8560a920c49d8ecb5dfe",
+        "auth_token": "5d1c8560a920c49d8ecb5dfe",
         "name": "guest_12345abcdef",
         "token": "12345abcdef",
         "reference_number": "test",
@@ -131,7 +131,7 @@ This api is responsiable for get OCR data of provided documents.
 
 ````js
 {
-    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => auth_token key response
     "api_token": "< add valid api_token here >"
 }
 ````
@@ -209,7 +209,7 @@ This api is responsiable for save captured document result into database.
 
 ````js
 {
-    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => auth_token key response
     "api_token": "< add valid api_token here >"
 }
 ````
@@ -255,7 +255,7 @@ This api is responsiable for get selfie image and verify it with user other docu
 
 ````js
 {
-    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => auth_token key response
     "api_token": "< add valid api_token here >"
 }
 ````
@@ -318,7 +318,7 @@ This api is responsiable for compare two image url's.
 
 ````js
 {
-    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => _id key response
+    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => auth_token key response
     "api_token": "< add valid api_token here >"
 }
 ````
