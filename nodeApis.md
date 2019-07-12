@@ -306,15 +306,15 @@ This api is responsiable for compare two image url's.
 
 ````js
 {
-	"first_image": {
-		"image": "https://test/test.png", // or you can send base64 string
-		"type": "url" // or you can send base64
-	} // Required
-	"second_image": {
+    "first_image": {
+        "image": "https://test/test.png", // or you can send base64 string
+        "type": "url" // or you can send base64
+    } // Required
+    "second_image": {
         "image": "data:image/jpeg;base64,JRgABAQAAAQABAA..==", // or you can send url string
         "type": "base64" // or you can send url
     }, // Required
-	"reference_number": "1234", // Required
+    "reference_number": "1234", // Required
     "channel": "web", //optional
     "type_of_request": "" //optional
 }
