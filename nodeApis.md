@@ -307,11 +307,11 @@ This api is responsiable for compare two image url's.
 ````js
 {
 	"first_image": {
-		"image": "https://qat.datafornix.com/ranosys/get-image/?file=5cd1986aa920c422c6111145", // or you can send base64 string
+		"image": "https://test/test.png", // or you can send base64 string
 		"type": "url" // or you can send base64
 	} // Required
-	"second_image": { 
-        "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAA..==", // or you can send url string
+	"second_image": {
+        "image": "data:image/jpeg;base64,JRgABAQAAAQABAA..==", // or you can send url string
         "type": "base64" // or you can send url
     }, // Required
 	"reference_number": "1234", // Required
