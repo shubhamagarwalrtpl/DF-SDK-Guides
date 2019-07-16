@@ -114,11 +114,12 @@ This api is responsiable for get OCR data of provided documents.
 ##### Request ( ** application/json **  )
 ````js
 {
-    "document_type": 'Identity Card' // Required: or 'Driving Licence', 'Passport'
+    "document_type": 'Identity Card' // Required: or 'Driving Licence', 'Passport', 'Vehicle Registration'
     "reference_number": "reference number here", // Required
     "images": [{
         "image_string": "image base64 string here",
-        "authority": "authority string herer"
+        "authority": "authority string herer",
+        "description":"Front" // Use "Back" for back image
     }, {
         ...
     }], // Required
