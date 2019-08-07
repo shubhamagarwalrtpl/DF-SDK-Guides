@@ -13,7 +13,7 @@ This Data-Fornix-Mobile API SDK provides a set of methods for iOS applications t
 allprojects {
    repositories {
       jcenter()
-       maven { url "https://dl.bintray.com/datafornix/dfapimodule" }
+       maven { url "https://mybigdata-df.bintray.com/dfapimodule" }
     }
  } 
 ```
