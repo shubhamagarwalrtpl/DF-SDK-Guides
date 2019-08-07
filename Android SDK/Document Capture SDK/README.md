@@ -18,7 +18,7 @@ allprojects {
    repositories {
       jcenter()
        maven {
-            url "https://dl.bintray.com/datafornix/documentscanner" 
+            url "https://mybigdata-df.bintray.com/documentscanner" 
        }
        maven {
             url "https://dl.bintray.com/vikashkumar/opencvlib"
