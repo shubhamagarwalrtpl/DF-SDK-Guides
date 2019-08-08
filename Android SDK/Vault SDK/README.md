@@ -22,7 +22,7 @@ allprojects {
             url  "https://mybigdata-df.bintray.com/dfvaultmodule"
        }
        maven { 
-            url "https://dl.bintray.com/datafornix/opencvlib" 
+            url "https://mybigdata-df.bintray.com/opencvlib" 
        }
     }
  } 
