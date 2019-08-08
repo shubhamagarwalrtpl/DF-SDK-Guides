@@ -21,7 +21,7 @@ allprojects {
             url "https://mybigdata-df.bintray.com/documentscanner" 
        }
        maven {
-            url "https://dl.bintray.com/vikashkumar/opencvlib"
+            url "https://mybigdata-df.bintray.com/opencvlib"
        }
     }
  } 
