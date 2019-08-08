@@ -29,7 +29,7 @@ allprojects {
 ```
 - In your app level `build.gradle` add this dependency:
 ```sh
-implementation 'selfiecheck:selfiecheck:1.0.0'
+implementation 'selfiecheck:selfiecheck:1.0.1'
 ```
 - Now in your project's activity create `SelfieCheckInstance` object: 
 ```sh
