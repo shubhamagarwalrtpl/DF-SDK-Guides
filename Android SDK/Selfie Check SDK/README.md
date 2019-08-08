@@ -12,8 +12,8 @@ This SDK is created to automatically capture the user's selfie using the facial 
 allprojects {
    repositories {
       jcenter()
-       maven { 
-       	    url "https://dl.bintray.com/datafornix/selfiecheck" 
+       maven {
+	    url  "https://mybigdata-df.bintray.com/selfiecheck"
 	}
        maven {
        	    url "https://dl.bintray.com/vikashkumar/opencvlib"
