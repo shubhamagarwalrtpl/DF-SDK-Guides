@@ -16,7 +16,7 @@ allprojects {
 	    url  "https://mybigdata-df.bintray.com/selfiecheck"
 	}
        maven {
-       	    url "https://dl.bintray.com/vikashkumar/opencvlib"
+       	    url "https://mybigdata-df.bintray.com/opencvlib"
 	}
     }
  } 
