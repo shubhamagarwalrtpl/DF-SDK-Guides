@@ -34,7 +34,7 @@ allprojects {
 ```
 - In your app level `build.gradle` add this dependency:
 ```sh
-implementation 'documentscanner:documentscanner:1.0.0'
+implementation 'documentscanner:documentscanner:1.0.1'
 ```
 - Now in your project's activity create DocumentCaptureInstance object: 
 ```sh
@@ -66,6 +66,21 @@ documentCaptureInstance.captureDocument(
        object : DocumentCaptureInstance.DocumentCaptureListener {
            override fun onDocumentCaptureSuccess(path: List<String>) {
                // get back and front image path from path:List<String>
+           }
+           override fun onDocumentCaptureFailure(error: DocumentCaptureInstance.DocumentCaptureError) {
+               // document uploading failed, please check error
+           }
+       })
+```
+
+- Call `getOcrFromImage()` function from `documentCaptureInstance` to get passport mrz parsed data
+```sh
+documentCaptureInstance.getOcrFromImage(
+       config,
+       object : DocumentCaptureInstance.DocumentCaptureListener {
+           override fun onDocumentCaptureSuccess(path: List<String>, documentData: DocumentData) {
+               // get back and front image path from path:List<String>
+               // get parsed data from documentData object like documentData.dateOfBirth
            }
            override fun onDocumentCaptureFailure(error: DocumentCaptureInstance.DocumentCaptureError) {
                // document uploading failed, please check error
