@@ -73,16 +73,16 @@ documentCaptureInstance.captureDocument(
        })
 ```
 
-- Call `getOcrFromImage()` function from `documentCaptureInstance` to get passport mrz parsed data
+- Call `getPassportData()` function from `documentCaptureInstance` to get passport mrz parsed data
 ```sh
-documentCaptureInstance.getOcrFromImage(
+documentCaptureInstance.getPassportData(
        config,
-       object : DocumentCaptureInstance.DocumentCaptureListener {
-           override fun onDocumentCaptureSuccess(path: List<String>, documentData: DocumentData) {
+       object : DocumentCaptureInstance.PassportCaptureListener {
+           override fun onPassportCaptureSuccess(path: List<String>, passportData: PassportData) {
                // get back and front image path from path:List<String>
                // get parsed data from documentData object like documentData.dateOfBirth
            }
-           override fun onDocumentCaptureFailure(error: DocumentCaptureInstance.DocumentCaptureError) {
+           override fun onPassportCaptureFailure(error: DocumentCaptureInstance.PassportCaptureError) {
                // document uploading failed, please check error
            }
        })
