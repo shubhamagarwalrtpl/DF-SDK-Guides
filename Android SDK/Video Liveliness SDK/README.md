@@ -14,7 +14,9 @@ An OTP of numbers will appear on screen while recording video and user have to s
 allprojects {
    repositories {
       jcenter()
-       maven { url "https://dl.bintray.com/datafornix/dfvideoliveliness" }
+       maven {
+	  url  "https://mybigdata-df.bintray.com/dfvideoliveliness"
+	}
     }
  } 
 ```

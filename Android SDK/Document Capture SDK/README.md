@@ -18,10 +18,10 @@ allprojects {
    repositories {
       jcenter()
        maven {
-            url "https://dl.bintray.com/datafornix/documentscanner" 
+            url "https://mybigdata-df.bintray.com/documentscanner" 
        }
-       maven { 
-            url "https://dl.bintray.com/datafornix/opencvlib" 
+       maven {
+            url "https://mybigdata-df.bintray.com/opencvlib"
        }
     }
  } 
@@ -34,7 +34,7 @@ allprojects {
 ```
 - In your app level `build.gradle` add this dependency:
 ```sh
-implementation 'documentscanner:documentscanner:1.0.0'
+implementation 'documentscanner:documentscanner:1.0.5'
 ```
 - Now in your project's activity create DocumentCaptureInstance object: 
 ```sh
@@ -68,6 +68,21 @@ documentCaptureInstance.captureDocument(
                // get back and front image path from path:List<String>
            }
            override fun onDocumentCaptureFailure(error: DocumentCaptureInstance.DocumentCaptureError) {
+               // document uploading failed, please check error
+           }
+       })
+```
+
+- Call `getPassportData()` function from `documentCaptureInstance` to get passport mrz parsed data
+```sh
+documentCaptureInstance.getPassportData(
+       config,
+       object : DocumentCaptureInstance.PassportCaptureListener {
+           override fun onPassportCaptureSuccess(path: List<String>, passportData: PassportData) {
+               // get back and front image path from path:List<String>
+               // get parsed data from documentData object like documentData.dateOfBirth
+           }
+           override fun onPassportCaptureFailure(error: DocumentCaptureInstance.PassportCaptureError) {
                // document uploading failed, please check error
            }
        })
