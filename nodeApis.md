@@ -22,7 +22,7 @@ This api is responsiable for create user.
 ````js
 {
     "user_token": "a4dvvd23", // Required: user unique token here
-    "reference_number": "reference number here", // Required
+    "reference_number": "reference number here", // optional
     "channel": "web", // optional
     "type_of_request": "request type here" // optional
 }
@@ -67,7 +67,7 @@ This api is responsiable for update user.
 ````js
 {
     "user_new_token": "12345abcdef", // Required: user unique token here
-    "reference_number": "reference number here", // Required
+    "reference_number": "reference number here", // optional
     "channel": "web", // optional
     "type_of_request": "request type here" // optional
 }
@@ -115,7 +115,7 @@ This api is responsiable for get OCR data of provided documents.
 ````js
 {
     "document_type": 'Identity Card' // Required: or 'Driving Licence', 'Passport', 'Vehicle Registration'
-    "reference_number": "reference number here", // Required
+    "reference_number": "reference number here",
     "images": [{
         "image_string": "image base64 string here",
         "authority": "authority string herer",
@@ -165,7 +165,7 @@ This api is responsiable for save captured document result into database.
     "issue_date": "1964-12-02",
     "nationality": "User Nationality",
     "licence_number": "License number"
-    "reference_number": "",
+    "reference_number": "", //optional
     "channel": "web", //optional
     "type_of_request": "" //optional
 };
@@ -182,7 +182,7 @@ This api is responsiable for save captured document result into database.
     "gender": "Male",
     "nationality": "User Nationality",
     "passport_number": "Passport Number",
-    "reference_number": "",
+    "reference_number": "", //optional
     "channel": "web", //optional
     "type_of_request": "" //optional
 };
@@ -200,7 +200,7 @@ This api is responsiable for save captured document result into database.
 	"birth_date": "1964-12-02",
 	"expiry_date": "1964-12-02",
 	"nationality": "User Nationality"
-    "reference_number": "Valid reference number",
+    "reference_number": "Valid reference number", //optional
     "channel": "web", //optional
     "type_of_request": "" //optional
 };
@@ -246,7 +246,7 @@ This api is responsiable for get selfie image and verify it with user other docu
 ````js
 {
     "selfie_image" : "<image base64 data here...>", // Required
-    "reference_number": "", // Required
+    "reference_number": "", // optional
     "channel": "web", //optional
     "type_of_request": "" //optional
 }
@@ -315,7 +315,7 @@ This api is responsiable for compare two image url's.
         "image": "data:image/jpeg;base64,JRgABAQAAAQABAA..==", // or you can send url string
         "type": "base64" // or you can send url
     }, // Required
-    "reference_number": "1234", // Required
+    "reference_number": "1234", // optional
     "channel": "web", //optional
     "type_of_request": "" //optional
 }
