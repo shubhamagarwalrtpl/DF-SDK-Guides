@@ -1,5 +1,4 @@
 ## DataFornix-API SDK
-![Download](https://api.bintray.com/packages/datafornix/dfapimodule/dfapimodule/images/download.svg)
 
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
