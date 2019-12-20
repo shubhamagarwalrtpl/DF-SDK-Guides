@@ -5,7 +5,7 @@
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
 
-This Data-Fornix-Mobile API SDK provides a set of methods for iOS applications to authenticate user, capture, save and retrieve data.
+This Data-Fornix-Mobile API SDK provides a set of methods for Android applications to authenticate user, capture, save and retrieve data.
 
 #### You can achieve the functionality with easy integration of following steps:
 - In your project level `build.gradle` add this dependency:
