@@ -57,7 +57,7 @@ ConnectionManager.instance.createUserToken(CreateTokenRequestModel(token: "<toke
 })
 ```
 
-### Get OCR from MSV
+### Get OCR image data using MSV
 
 ### Intialization and Accessing Methods
 - `import DFAPIFramework` in your class or file to use the framework.
@@ -73,11 +73,4 @@ ConnectionManager.instance.getOCRResultFromImageMSV(GetOCRRequestModel(documentT
 //error while getting image data
  print("Error occured: \(error?.localizedDescription)")
 })
-```
-
-## Documentation for API Methods
-
-|Method Name                               |Description                                                                                   |Parameters                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|createUserToken                           |This method is used to create token & authenticate it from server.                                     |1. Request Model of <b>CreateTokenRequestModel</b> containing values <b>token_key</b>, <b>channel</b>, <b>reference_number</b> and <b>type_of_request</b>  .                                                                                                                                                                                                                                                                                        |                                              |none                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|getOCRResultFromImageMSV                     |to upload captured image to server and get the scanned data.                                  |1. <b>multipartDataArray</b> - It requires array of 'MultipartDataModal' object. <br> 2. <b>assetSubTypeName</b> - asset document name for eg: Passport and Identity card.                                                                                                                                                                                                                                                                                 |
+```                                                                                                    |
