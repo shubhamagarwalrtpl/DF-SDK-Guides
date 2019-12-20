@@ -29,13 +29,14 @@ DataFornixSdk.initializeSdk("YOUR_API_TOKEN", "YOUR BASE URL", "YOUR_AUTHENTICAT
 DataFornixSdk.getOcrResultMSV(
             this,
             GetOcrResultModelMsv(
-                "",
-                "Passport",
-                arrayListOf(Image("IND", "Front", "data:image/jpg;base64," + encodedImage)),
-                "123"
+                "your_channel",
+                "your_document_type",
+                arrayListOf(Image("your_authority", "your_description_Front_or_Back", "data:image/jpg;base64," + "encodedImageString")),
+                "your_reference_number"
             ),
             object : ApiCallback<OcrResultdataMsv> {
                 override fun onSuccess(result: OcrResultdataMsv) {
+                     // Get Ocr Result Here
                     Log.d("Msv Response", result.toString())
                 }
 
