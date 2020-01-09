@@ -1,4 +1,4 @@
-DataFornix: Node API's
+DataFornix: Python API's
 ==================================
 
 ## API's
@@ -10,7 +10,7 @@ DataFornix: Node API's
 This api is responsiable for create user.
 
 ##### 1.1 **API URL**  
-`http://api.datafornix.com:8081/api/create-user-token`
+`https://qat.datafornix.com/mashreq/api/v1/create-user-token/`
 
 ##### 1.2 **Method Type**
 `POST`
@@ -21,7 +21,7 @@ This api is responsiable for create user.
 
 ````js
 {
-    "user_token": "a4dvvd23", // Required: user unique token here
+    "token":"anupam123", // Required: user unique token here
     "reference_number": "reference number here", // optional
     "channel": "web", // optional
     "type_of_request": "request type here" // optional
@@ -32,7 +32,7 @@ This api is responsiable for create user.
 
 ````js
 {
-    "api_token": "< add valid api_token here >"
+    "Token": "Token vB2lWt8gicVs34yXoxH62VsjeLPWCxrH"
 }
 ````
 
@@ -104,7 +104,7 @@ It will return following object array.
 This api is responsiable for get OCR data of provided documents. 
 
 ##### 3.1 **API URL**  
-`http://api.datafornix.com:8081/api/document-capture`
+`https://qat.datafornix.com/mashreq/api/v1/asset/get-ocr-results/`
 
 ##### 3.2 **Method Type**
 `POST`
@@ -124,7 +124,6 @@ This api is responsiable for get OCR data of provided documents.
         ...
     }], // Required
     "channel": "web", // optional
-    "type_of_request": "request type here" // optional
 }
 ````
 
@@ -132,23 +131,55 @@ This api is responsiable for get OCR data of provided documents.
 
 ````js
 {
-    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => auth_token key response
-    "api_token": "< add valid api_token here >"
+    "Authorization": "bearer W83CdPEc5wf25aFKBM8zvIdBXZ4nbx0X", // token that you will receive in create-user => auth_token key response
+    "Token": "Token vB2lWt8gicVs34yXoxH62VsjeLPWCxrH" // Add a valid api_token
 }
 ````
 
+### 4. Get Pdf Ocr
 
-### 4. Document Save
-
-This api is responsiable for save captured document result into database.
+This api is responsiable for get OCR data of provided documents. 
 
 ##### 4.1 **API URL**  
-`http://api.datafornix.com:8081/api/document-save`
+`https://qat.datafornix.com/mashreq/api/v1/asset/get-pdf-ocr/`
 
 ##### 4.2 **Method Type**
 `POST`
 
 ##### 4.3 **Require Parameters**
+
+##### Request ( ** application/json **  )
+````js
+{
+    "extraction_mode": 'realtime' 
+    "document_type": "Trade Licence",
+    "pdf": "Upload a pdf file here" // Required
+    "reference_number":123, // optional
+    "channel":web
+}
+````
+
+##### Headers
+
+````js
+{
+    "Authorization": "bearer W83CdPEc5wf25aFKBM8zvIdBXZ4nbx0X", // token that you will receive in create-user => auth_token key response
+    "Token": "Token vB2lWt8gicVs34yXoxH62VsjeLPWCxrH" // Add a valid api_token
+}
+````
+
+
+### 5. Document Save
+
+This api is responsiable for save captured document result into database.
+
+##### 5.1 **API URL**  
+`http://api.datafornix.com:8081/api/document-save`
+
+##### 5.2 **Method Type**
+`POST`
+
+##### 5.3 **Require Parameters**
 
 ##### Request ( ** application/json **  )
 
@@ -215,7 +246,7 @@ This api is responsiable for save captured document result into database.
 }
 ````
 
-##### 4.4 **Return Response**
+##### 5.4 **Return Response**
 
 It will return following object array.
 
@@ -229,17 +260,17 @@ It will return following object array.
 ```
 
 
-### 5. Selfie Check
+### 6. Selfie Check
 
 This api is responsiable for get selfie image and verify it with user other documents images.
 
-##### 5.1 **API URL**  
+##### 6.1 **API URL**  
 `http://api.datafornix.com:8081/api/selfie-check`
 
-##### 5.2 **Method Type**
+##### 6.2 **Method Type**
 `POST`
 
-##### 5.3 **Require Parameters**
+##### 6.3 **Require Parameters**
 
 ##### Request ( ** application/json **  )
 
@@ -261,7 +292,7 @@ This api is responsiable for get selfie image and verify it with user other docu
 }
 ````
 
-##### 5.4 **Return Response**
+##### 6.4 **Return Response**
 
 It will return following object array.
 
@@ -291,17 +322,17 @@ It will return following object array.
 }
 ```
 
-### 6. Image Compare
+### 7. Image Compare
 
 This api is responsiable for compare two image url's.
 
-##### 6.1 **API URL**  
-`http://api.datafornix.com:8081/api/compare-image`
+##### 7.1 **API URL**  
+`https://qat.datafornix.com/mashreq/api/v1/compare-image/`
 
-##### 6.2 **Method Type**
+##### 7.2 **Method Type**
 `POST`
 
-##### 6.3 **Require Parameters**
+##### 7.3 **Require Parameters**
 
 ##### Request ( ** application/json **  )
 
@@ -325,19 +356,17 @@ This api is responsiable for compare two image url's.
 
 ````js
 {
-    "auth_token": "5cdec08fa920c440dd56af2a", // token that you will receive in create-user => auth_token key response
-    "api_token": "< add valid api_token here >"
+    "Authorization": "bearer W83CdPEc5wf25aFKBM8zvIdBXZ4nbx0X", // token that you will receive in create-user => auth_token key response
+    "Token": "Token vB2lWt8gicVs34yXoxH62VsjeLPWCxrH" // Add a valid api_token
 }
 ````
 
-##### 6.4 **Return Response**
+##### 7.4 **Return Response**
 
 It will return following object array.
 
 ```js
 {
-    "first_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
-    "second_image_url": "https://qat.datafornix.com/mashreq/get-image/?file=5d1c858ba920c49d8ecb5e01",
     "is_matched": true / false,
     "reference_number": "1234",
     "channel": "",
