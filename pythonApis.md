@@ -135,7 +135,37 @@ This api is responsiable for get OCR data of provided documents.
     "Token": "Token vB2lWt8gicVs34yXoxH62VsjeLPWCxrH" // Add a valid api_token
 }
 ````
-
+##### 3.4  Response ( ** application/json **  )
+````js
+{
+    "application_error_list": [     
+        {
+            "error_code": "",
+            "error_message": ""
+        },
+        {
+            "error_code": "",
+            "error_message": ""
+        }
+    ],
+    "data": {
+        "asset_type": "",
+        "channel": "web",
+        "reference_number": "",
+        "type_of_request": "get OCR",
+        "properties": {}      // All extracted fields with values come here
+    },
+    "image_feedback": {
+        "back_image_resolution": "",
+        "is_front_exif_data": "",
+        "front_image_orientation": "",
+        "front_image_resolution": "",
+        "is_back_exif_data": "",
+        "back_image_orientation": ""
+    },
+    "image_quality_feedback": ""
+}
+````
 ### 4. Get Pdf Ocr
 
 This api is responsiable for get OCR data of provided documents. 
@@ -148,15 +178,15 @@ This api is responsiable for get OCR data of provided documents.
 
 ##### 4.3 **Require Parameters**
 
-##### Request ( ** application/json **  )
+##### Request ( ** application/x-www-form-urlencoded **  )
 ````js
-{
+
     "extraction_mode": 'realtime' 
     "document_type": "Trade Licence",
     "pdf": "Upload a pdf file here" // Required
     "reference_number":123, // optional
     "channel":web
-}
+
 ````
 
 ##### Headers
@@ -165,6 +195,17 @@ This api is responsiable for get OCR data of provided documents.
 {
     "Authorization": "bearer W83CdPEc5wf25aFKBM8zvIdBXZ4nbx0X", // token that you will receive in create-user => auth_token key response
     "Token": "Token vB2lWt8gicVs34yXoxH62VsjeLPWCxrH" // Add a valid api_token
+}
+````
+##### 4.5  Response ( ** application/json **  )
+````js
+{
+    "data": {
+        "channel": "web",
+        "reference_number": "123",
+        "properties": {}                  // All extracted fields with values come here
+    },
+    "application_error_list": []
 }
 ````
 
