@@ -34,7 +34,7 @@ allprojects {
 ```
 - In your app level `build.gradle` add this dependency:
 ```sh
-implementation 'documentscanner:documentscanner:1.0.5'
+implementation 'documentscanner:documentscanner:1.3.0'
 ```
 - Now in your project's activity create DocumentCaptureInstance object: 
 ```sh
