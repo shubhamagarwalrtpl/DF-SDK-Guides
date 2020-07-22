@@ -1,4 +1,4 @@
-# DataFornix Mobile API SDK
+# DataFornix Mobile API SDK's
 
 This Data-Fornix-Mobile API SDK provides a set of methods for iOS applications to authenticate user, capture, save and retrieve data.
 
